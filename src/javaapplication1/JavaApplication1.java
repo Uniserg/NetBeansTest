@@ -26,12 +26,7 @@ public class JavaApplication1 {
         
         return order;
     }
-    
-    public static void someMethod(int a, int b, int c, String ...args){
-        for (String arg : args) {
-            System.out.println(arg + a);
-        }
-    }
+   
     public static void main(String[] args) {
         ArrayList<Food> menuForBar = new ArrayList<>(
                 Arrays.asList(
@@ -80,23 +75,22 @@ public class JavaApplication1 {
             cafe.closeOrder(cafe.getOrders().get(i));
         }
         
-        cafe.getOrders().forEach(order1 -> System.out.println(order1 + "\n"));
-        someMethod(4, 9, 1, new String[] {"Hi", "How", "are", "you"});
+        cafe.getOrders().forEach(order1 -> {System.out.println(order1 + "\n");});
         
-        Date md = new GregorianCalendar(2001, 3 , 23).getTime();
-        System.out.println(md);
-        
-        PerHour emp1 = new PerHour("Tony", "Gatte", md, "Java programmer", 1000);
-        PerHour emp2 = new PerHour("Fill", "Bonte", new GregorianCalendar(2001, 2, 30).getTime(), "Java programmer", 1000);
-        
-        Employees listEmp = new Employees();
-        listEmp.add(emp1);
-        listEmp.add(emp2);
-        
-        System.out.println(listEmp);
-        listEmp.orderBySalary().
-                forEach((e)-> System.out.print(String.format("%20d %20s %20s %20s %20s %20.2f\n", e.id, e.lastName, e.firstName, new SimpleDateFormat("dd.MM.Y").format(e.dateOfBirth) , e.job, e.getSalary())));
-         
+//        Date md = new GregorianCalendar(2001, 3 , 23).getTime();
+//        System.out.println(md);
+//        
+//        PerHour emp1 = new PerHour("Tony", "Gatte", md, "Java programmer", 1000);
+//        PerHour emp2 = new PerHour("Fill", "Bonte", new GregorianCalendar(2001, 2, 30).getTime(), "Java programmer", 1000);
+//        
+//        Employees listEmp = new Employees();
+//        listEmp.add(emp1);
+//        listEmp.add(emp2);
+//        
+//        System.out.println(listEmp);
+//        listEmp.orderBySalary().
+//                forEach((e)-> System.out.print(String.format("%20d %20s %20s %20s %20s %20.2f\n", e.id, e.lastName, e.firstName, new SimpleDateFormat("dd.MM.Y").format(e.dateOfBirth) , e.job, e.getSalary())));
+//         
     }
     
 }
